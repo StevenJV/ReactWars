@@ -1,10 +1,30 @@
 import ListGroup from "./components/ListGroup";
+import Alert from "./components/Alert";
+import { useState } from "react";
+
 
 let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
-const handleSelectedItem = (item: string) => { console.log(item) }
-
 function App() {
-  return <div><ListGroup items={items} heading="Cities" onSelectItem={handleSelectedItem} /></div>;
+  const [selectedItem, setSelectedItem] = useState('none');
+  const handleSelectedItem = (item: string) => {
+    setSelectedItem(item);
+    console.log(item);
+  };
+  return (
+    <>
+      <div>
+        <ListGroup
+          items={items}
+          heading="Cities"
+          onSelectItem={handleSelectedItem}
+        />
+      </div>
+      <p></p>
+      <div>
+        <Alert text={selectedItem} />
+      </div>
+    </>
+  );
 }
 
 export default App;
