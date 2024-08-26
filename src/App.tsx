@@ -7,11 +7,13 @@ let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
 function App() {
   const [selectedItem, setSelectedItem] = useState("");
   const [alertVisible, setAlertVisibility] = useState(false);
+  const [buttonDisabled, setButtonDisabled] = useState(true);
+
   const handleSelectedItem = (item: string) => {
     setSelectedItem(item);
-    console.log(item);
-    console.log(alertVisible);
+    setButtonDisabled(false);
   };
+
   return (
     <>
       <div>
@@ -26,10 +28,21 @@ function App() {
         {alertVisible && (
           <Alert
             children={selectedItem}
-            onClose={() => setAlertVisibility(false)}
+            onClose={() => {
+              setAlertVisibility(false);
+              setButtonDisabled(false);
+            }}
           />
         )}
-        <Button onClick={() => setAlertVisibility(true)}>go!</Button>
+        <Button
+          disabled={buttonDisabled}
+          onClick={() => {
+            setAlertVisibility(true);
+            setButtonDisabled(true);
+          }}
+        >
+          go!
+        </Button>
       </div>
     </>
   );
