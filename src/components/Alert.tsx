@@ -1,8 +1,16 @@
+import { ReactNode } from "react";
+
 interface Props {
-  text: string;
+  children: ReactNode;
 }
 
-const Alert = ({ text }: Props) => {
-  return <div className="alert alert-success">{text}</div>;
+const Alert = ({ children }: Props) => {
+  return (
+    children && (
+      <div className="alert alert-success">
+        let's go to <strong>{children}</strong>
+      </div>
+    )
+  );
 };
 export default Alert;

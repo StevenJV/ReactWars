@@ -2,10 +2,9 @@ import ListGroup from "./components/ListGroup";
 import Alert from "./components/Alert";
 import { useState } from "react";
 
-
 let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
 function App() {
-  const [selectedItem, setSelectedItem] = useState('none');
+  const [selectedItem, setSelectedItem] = useState("");
   const handleSelectedItem = (item: string) => {
     setSelectedItem(item);
     console.log(item);
@@ -21,7 +20,7 @@ function App() {
       </div>
       <p></p>
       <div>
-        <Alert text={selectedItem} />
+        <Alert children={selectedItem} />
       </div>
     </>
   );
