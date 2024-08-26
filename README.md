@@ -15,6 +15,7 @@ A Typescript/React sandbox using the Star Wars API
 % npm install
 % npm run dev
 ```
+open browser to URL provided.
 <!--
 ### Dependencies
 
@@ -31,7 +32,7 @@ Steven Vore
 
 ## Version History
 
-0.0 working through Mosh's [React Tutorial for Beginners](https://www.youtube.com/watch?v=SqcY0GlETPk)
+0.0x working through Mosh's [React Tutorial for Beginners](https://www.youtube.com/watch?v=SqcY0GlETPk)
 <!--
 * 0.2
     * Various bug fixes and optimizations
