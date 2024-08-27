@@ -6,27 +6,22 @@ interface Props {
 }
 
 const Button = ({ children, color = "primary", disabled, onClick }: Props) => {
+  let theClassNames: string;
+  disabled
+    ? (theClassNames = 'btn btn-outline-primary' )
+    : (theClassNames = `btn btn-${color}` );
+  console.log(disabled);
+  console.log(theClassNames);
   return (
     <div>
-      {disabled ? (
-        <button
-          type="button"
-          className={"btn btn-outline-primary"}
-          disabled={disabled}
-          onClick={onClick}
-        >
-          {children}
-        </button>
-      ) : (
-        <button
-          type="button"
-          className={"btn btn-" + color}
-          onClick={onClick}
-          disabled={disabled}
-        >
-          {children}
-        </button>
-      )}
+      <button
+        type="button"
+        className={theClassNames}
+        disabled={disabled}
+        onClick={onClick}
+      >
+        {children}
+      </button>
     </div>
   );
 };
